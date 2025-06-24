@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head><head><head><script type="text/javascript" src="/___vscode_livepreview_injected_script"></script><link href="https://www.puncakbromo77.com" rel="canonical" /><link href="https://api2-brm.imgnxb.com/images/OZgRXPSHsNQ/favicon_51638924-cb86-4947-861a-7a5ba0d9a5ca_1749894088173.png" rel="icon" type="image/x-icon" />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Logo, Foto, Tombol Kotak Kosong + Hujan Salju + Background Animasi + Petir Besar</title>
+<style>
+  body {
+    margin: 0; padding: 0;
+    background: #121212;
+    color: #eee;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Salju */
+  #snow {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .snowflake {
+    position: absolute;
+    top: -10px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none;
+    filter: drop-shadow(0 0 4px white);
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(0) translateX(0);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(110vh) translateX(30px);
+      opacity: 0.2;
+    }
+  }
+
+  /* Animasi beat foto cepat */
+  @keyframes beat {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  /* Container bungkus logo+foto dengan animasi bokeh di belakang */
+  .image-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 40px 0;
+    z-index: 2;
+    overflow: visible;
+  }
+
+  /* Bokeh circles di belakang container gambar */
+  .image-wrapper::before,
+  .image-wrapper::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.5;
+    animation: floatBokeh 15s ease-in-out infinite alternate;
+    z-index: -1; /* Supaya di belakang gambar */
+  }
+
+  /* Circle 1 */
+  .image-wrapper::before {
+    width: 300px;
+    height: 300px;
+    background: #00ffff;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+  }
+
+  /* Circle 2 */
+  .image-wrapper::after {
+    width: 400px;
+    height: 400px;
+    background: #a40000;
+    top: 60%;
+    left: 70%;
+    animation-delay: 7s;
+  }
+
+  @keyframes floatBokeh {
+    0% {
+      transform: translateY(0) translateX(0);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(-50px) translateX(50px);
+      opacity: 0.3;
+    }
+  }
+
+  /* Ubah logo jadi kotak dengan sudut tumpul */
+  .logo {
+    width: 350px;
+    filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.8));
+    position: relative;
+    z-index: 2;
+    border-radius: 20px;
+    object-fit: cover;
+    height: auto;
+  }
+
+  /* Ubah foto jadi kotak besar dengan sudut tumpul */
+  .foto {
+    width: 600px;
+    height: 450px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 0 18px rgba(247, 0, 0, 0.7);
+    cursor: pointer;
+    position: relative;
+    z-index: 5; /* di atas petir */
+    animation: beat 0.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    transform-origin: center;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .foto:hover {
+    animation-play-state: paused;
+    transform: scale(1.1);
+    box-shadow: 0 0 28px rgba(0, 0, 0, 0.9);
+  }
+
+  .btn-container {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 2;
+  }
+
+  a.button {
+    display: inline-block;
+    padding: 14px 48px;
+    border-radius: 8px;
+    background: transparent;
+    border: 2px solid #eee;
+    color: #eee;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    transition: background 0.25s ease, color 0.25s ease;
+    user-select: none;
+  }
+  a.button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+  }
+
+  /* Percikan petir besar di belakang foto */
+  .big-lightning {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 520px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 4; /* di bawah foto */
+    filter:
+      drop-shadow(0 0 15px #ffff88)
+      drop-shadow(0 0 25px #ffff66)
+      drop-shadow(0 0 35px #ffff44);
+    animation: flicker 2.5s infinite alternate ease-in-out;
+  }
+
+  @keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Salju -->
+  <div id="snow"></div>
+
+  <!-- Bungkus logo + foto -->
+  <div class="image-wrapper">
+    
+    <!-- Percikan petir besar -->
+    <svg class="big-lightning" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" >
+      <path d="M20 2 L44 22 L32 22 L44 42 L24 30 L36 30 L20 62" stroke="yellow" stroke-width="5" stroke-linejoin="round" fill="none" />
+    </svg>
+
+    <img src="https://fast.image.delivery/eptcyjw.jpg" alt="Foto Kotak" class="foto" />
+  </div>
+    <img src="https://api2-brm.imgnxb.com/images/OZgRXPSHsNQ/logo_51638924-cb86-4947-861a-7a5ba0d9a5ca_1749894088173.gif" alt="Logo" class="logo" />
+
+  <!-- Tombol -->
+  <div class="btn-container">
+    <a href="https://abidin3bromo77.site/desktop/register" class="button" target="_blank" rel="noopener noreferrer nofollow">DAFTAR</a>
+    <a href="https://abidin3bromo77.site/desktop/home" class="button" target="_blank" rel="noopener noreferrer nofollow">LOGIN</a>
+  </div>
+
+<script>
+  const snowContainer = document.getElementById('snow');
+  const maxFlakes = 100;
+
+  function randomRange(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  for (let i = 0; i < maxFlakes; i++) {
+    const flake = document.createElement('div');
+    flake.classList.add('snowflake');
+    const size = randomRange(6, 14);
+    flake.style.width = `${size}px`;
+    flake.style.height = `${size}px`;
+    flake.style.left = `${Math.random() * 100}vw`;
+    flake.style.animationDuration = `${randomRange(7, 15)}s`;
+    flake.style.animationDelay = `${Math.random() * 15}s`;
+    snowContainer.appendChild(flake);
+  }
+</script>
+
+</body>
+Copyright © 2024 🔥Bromo77🔥 All rights Reserved. 18+
+</html>
